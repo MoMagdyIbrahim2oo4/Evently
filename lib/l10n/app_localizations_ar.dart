@@ -29,4 +29,61 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get lets_start => 'لنبدأ';
+
+  @override
+  String get onboaeding1title => 'ابحث عن فعاليات تلهمك';
+
+  @override
+  String get onboarding1deccription =>
+      'انغمس في عالم من الأحداث المصممة لتناسب اهتماماتك الفريدة. سواء كنت من عشاق الموسيقى الحية، أو ورش العمل الفنية، أو التواصل المهني، أو ببساطة اكتشاف تجارب جديدة، فلدينا ما يناسب الجميع. ستساعدك توصياتنا المنسقة على الاستكشاف والتواصل والاستفادة القصوى من كل فرصة من حولك.';
+
+  @override
+  String get onboaeding2title => 'تخطيط الفعاليات بسهولة';
+
+  @override
+  String get onboarding2deccription =>
+      'تخلص من عناء تنظيم الفعاليات مع أدوات التخطيط الشاملة لدينا. بدءًا من إعداد الدعوات وإدارة الردود، وصولًا إلى جدولة التذكيرات وتنسيق التفاصيل، نوفر لك كل ما تحتاجه. خطط بسهولة وركز على الأهم - خلق تجربة لا تُنسى لك ولضيوفك.';
+
+  @override
+  String get onboaeding3title => 'تواصل مع الأصدقاء وشارك اللحظات';
+
+  @override
+  String get onboarding3deccription =>
+      'اجعل كل مناسبة لا تُنسى بمشاركة التجربة مع الآخرين. تتيح لك منصتنا دعوة الأصدقاء، وإبقاء الجميع على اطلاع دائم، والاحتفال باللحظات معًا. وثّق وشارك الحماس مع شبكتك، لتستعيد أبرز اللحظات وتعتزّ بالذكريات.';
+
+  @override
+  String get skip => 'تخطي';
+
+  @override
+  String get next => 'التالي';
+
+  @override
+  String get getStarted => 'لنبدأ';
+
+  @override
+  String get logintoyouraccount => 'سجل الدخول إلى حسابك';
+
+  @override
+  String get enterYourEmail => 'أدخل بريدك الإلكتروني';
+
+  @override
+  String get enterYourPassword => 'أدخل كلمة المرور الخاصة بك';
+
+  @override
+  String get forgetPassword => 'هل نسيت كلمة المرور؟';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get dontHaveAnAccount => 'ليس لديك حساب؟';
+
+  @override
+  String get signUp => 'اشتراك';
+
+  @override
+  String get or => 'أو';
+
+  @override
+  String get loginwithGoogle => 'تسجيل الدخول باستخدام جوجل';
 }

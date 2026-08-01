@@ -4,50 +4,126 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 
 class AppTheme {
-
   static final ThemeData lightTheme = ThemeData(
-      brightness: Brightness.light,
-      scaffoldBackgroundColor: AppColors.backgroundLight,
-      textTheme: TextTheme(
-          headlineMedium: AppTextStyle.darkGray20SemiBold.copyWith(
-              color: AppColors.darkGray),
-          bodyMedium: AppTextStyle.mediumDarkGray16Regular.copyWith(
-              color: AppColors.mediumDarkGray),
-          titleMedium: AppTextStyle.darkBlue18Medium.copyWith(
-              color: AppColors.darkBlue),
-          labelMedium: AppTextStyle.white18Medium.copyWith(
-              color: AppColors.white)
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: AppColors.backgroundLight,
+    textTheme: TextTheme(
+      headlineMedium: AppTextStyle.darkGray20SemiBold.copyWith(
+        color: AppColors.darkGray,
       ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.darkBlue,
-              shape: RoundedSuperellipseBorder(
-                  borderRadius: BorderRadius.circular(16.r)),
-              padding: EdgeInsets.symmetric(vertical: 9.h, horizontal: 123.w)
-          )
-      )
+      bodyMedium: AppTextStyle.mediumDarkGray16Regular.copyWith(
+        color: AppColors.mediumDarkGray,
+      ),
+      titleMedium: AppTextStyle.darkBlue18Medium.copyWith(
+        color: AppColors.darkBlue,
+      ),
+      labelMedium: AppTextStyle.white18Medium.copyWith(color: AppColors.white),
+      headlineLarge: AppTextStyle.darkGray20SemiBold.copyWith(
+        color: AppColors.darkBlue,
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: AppColors.darkBlue,
+        shape: RoundedSuperellipseBorder(
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+        padding: EdgeInsets.symmetric(vertical: 9.h),
+        minimumSize: Size(double.infinity, 50.h),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        backgroundColor: AppColors.white,
+        foregroundColor: AppColors.darkBlue,
+        padding: EdgeInsets.all(5.r),
+        side: BorderSide(color: AppColors.lightGray),
+        shape: RoundedSuperellipseBorder(
+          borderRadius: BorderRadius.circular(8.r),
+        ),
+        fixedSize: Size(63, 32),
+      ),
+    ),
+    appBarTheme: AppBarTheme(backgroundColor: AppColors.backgroundLight),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: AppColors.DarkNavyBlue,
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(color: AppColors.deepBlue),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(color: AppColors.deepBlue),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(color: Colors.red),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(color: Colors.red),
+      ),
+    ),
   );
 
   static final ThemeData darkTheme = ThemeData(
-      brightness: Brightness.dark,
-      scaffoldBackgroundColor: AppColors.backgrounddark,
-      textTheme: TextTheme(
-        headlineMedium: AppTextStyle.darkGray20SemiBold.copyWith(
-            color: AppColors.white),
-        bodyMedium: AppTextStyle.mediumDarkGray16Regular.copyWith(
-            color: AppColors.white),
-        titleMedium: AppTextStyle.darkBlue18Medium.copyWith(
-            color: AppColors.white),
-        labelMedium: AppTextStyle.white18Medium.copyWith(
-            color: AppColors.white),
+    brightness: Brightness.dark,
+    scaffoldBackgroundColor: AppColors.backgrounddark,
+    textTheme: TextTheme(
+      headlineMedium: AppTextStyle.darkGray20SemiBold.copyWith(
+        color: AppColors.white,
       ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.lightBlue,
-              shape: RoundedSuperellipseBorder(
-                  borderRadius: BorderRadius.circular(16.r)),
-              padding: EdgeInsets.symmetric(vertical: 9.h, horizontal: 123.w)
-          )
-      )
+      bodyMedium: AppTextStyle.mediumDarkGray16Regular.copyWith(
+        color: AppColors.white,
+      ),
+      titleMedium: AppTextStyle.darkBlue18Medium.copyWith(
+        color: AppColors.white,
+      ),
+      labelMedium: AppTextStyle.white18Medium.copyWith(color: AppColors.white),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: AppColors.lightBlue,
+        shape: RoundedSuperellipseBorder(
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+        padding: EdgeInsets.symmetric(vertical: 9.h),
+        minimumSize: Size(double.infinity, 50.h),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        backgroundColor: AppColors.DarkNavyBlue,
+        foregroundColor: AppColors.white,
+        padding: EdgeInsets.all(5.r),
+        side: BorderSide(color: AppColors.darkBlue),
+        shape: RoundedSuperellipseBorder(
+          borderRadius: BorderRadius.circular(8.r),
+        ),
+        fixedSize: Size(63, 32),
+      ),
+    ),
+    appBarTheme: AppBarTheme(backgroundColor: AppColors.backgrounddark),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: AppColors.DarkNavyBlue,
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(color: AppColors.deepBlue),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(color: AppColors.deepBlue),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(color: Colors.red),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16.r),
+        borderSide: BorderSide(color: Colors.red),
+      ),
+    ),
   );
 }
