@@ -1,7 +1,10 @@
 import 'package:evently/core/constants/app_assets.dart';
 import 'package:evently/core/providers/app_localization_provider.dart';
 import 'package:evently/core/providers/app_theme_provider.dart';
+import 'package:evently/core/utils/app_routes.dart';
 import 'package:evently/l10n/app_localizations.dart';
+import 'package:evently/presentation/widgets/my_Elevated_button.dart';
+import 'package:evently/presentation/widgets/title_description.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +22,7 @@ class SetupScreen extends StatelessWidget {
       context,
       listen: true,
     );
-    AppThemeProvider themeProvider = Provider.of(context, listen: true);
+    ThemeProvider themeProvider = Provider.of(context, listen: true);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -48,13 +51,11 @@ class SetupScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
-                  AppLocalizations.of(context)!.personalizeyourexperience,
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-                Text(
-                  AppLocalizations.of(context)!.setupText,
-                  style: Theme.of(context).textTheme.bodyMedium,
+                TitleDescription(
+                  title: AppLocalizations.of(
+                    context,
+                  )!.personalizeyourexperience,
+                  description: AppLocalizations.of(context)!.setupText,
                 ),
                 SettingsWidget(
                   title: AppLocalizations.of(context)!.language,
@@ -62,32 +63,33 @@ class SetupScreen extends StatelessWidget {
                   label2: AppLocalizations.of(context)!.arabic,
                   isFirstSelected: languageProvider.language == Locale("en"),
                   onFirstSelected: () {
-                    languageProvider.changeLanguage("en");
+                    languageProvider.setLocalization("en");
                   },
                   onSecondSelected: () {
-                    languageProvider.changeLanguage("ar");
+                    languageProvider.setLocalization("ar");
                   },
                 ),
                 SettingsWidget(
                   title: AppLocalizations.of(context)!.theme,
                   icon1: Icons.wb_sunny,
                   icon2: Icons.dark_mode_outlined,
-                  isFirstSelected: themeProvider.appTheme == ThemeMode.light,
+                  isFirstSelected: themeProvider.themeMode == ThemeMode.light,
                   onFirstSelected: () {
-                    themeProvider.changeTheme(ThemeMode.light);
+                    themeProvider.setThemeMode(ThemeMode.light);
                   },
                   onSecondSelected: () {
-                    themeProvider.changeTheme(ThemeMode.dark);
+                    themeProvider.setThemeMode(ThemeMode.dark);
                   },
                 ),
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
-                      AppLocalizations.of(context)!.lets_start,
-                      style: Theme.of(context).textTheme.labelMedium,
-                    ),
+                  child: MyElevatedButton(
+                    label: AppLocalizations.of(context)!.lets_start,
+                    onpressed: () {
+                      Navigator.of(
+                        context,
+                      ).pushNamed(AppRoutes.onboardingScreen);
+                    },
                   ),
                 ),
               ],
