@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 typedef Validator = String? Function(String?)?;
 
 class CustomTextFormField extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final Validator validator;
   final int lines;
   bool? isObscured;
@@ -16,7 +16,7 @@ class CustomTextFormField extends StatelessWidget {
 
   CustomTextFormField({
     super.key,
-    required this.controller,
+    this.controller,
     required this.validator,
     this.lines = 1,
     this.isObscured,

@@ -1,5 +1,5 @@
 import 'package:evently/l10n/app_localizations.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Authentication {
   static String? emailValidation(BuildContext context,String? email) {

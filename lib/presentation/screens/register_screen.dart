@@ -21,24 +21,14 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   bool isObscured = true;
   bool isConfirmObscured = true;
-  String confirmPassword = '';
 
   TextEditingController usernameController = TextEditingController();
 
   TextEditingController emailController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
-  TextEditingController confirmPasswordController = TextEditingController();
   GlobalKey<FormState> formState = GlobalKey();
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    passwordController.addListener(() {
-      confirmPassword = confirmPasswordController.text;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,11 +90,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     },
                   ),
                   CustomTextFormField(
-                    controller: confirmPasswordController,
                     validator: (value) {
                       if (value == null ||
                           value.isEmpty ||
-                          value != confirmPassword) {
+                          value != passwordController.text) {
                         return AppLocalizations.of(
                           context,
                         )!.invalidConfirmation;

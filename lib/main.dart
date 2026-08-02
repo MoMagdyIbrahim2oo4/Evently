@@ -4,8 +4,6 @@ import 'package:evently/core/utils/app_routes.dart';
 import 'package:evently/core/utils/app_theme.dart';
 import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/presentation/screens/login_screen.dart';
-
-// import 'package:evently/presentation/screens/login_screen.dart';
 import 'package:evently/presentation/screens/onboarding_screen.dart';
 import 'package:evently/presentation/screens/register_screen.dart';
 import 'package:evently/presentation/screens/setup_screen.dart';
