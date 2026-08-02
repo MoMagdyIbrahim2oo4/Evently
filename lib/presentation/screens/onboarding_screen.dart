@@ -78,9 +78,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     label: AppLocalizations.of(context)!.getStarted,
                     onpressed: () async {
                       await SharedPref.setKey();
-                      Navigator.of(
-                        context,
-                      ).pushReplacementNamed(AppRoutes.loginScreen);
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                        AppRoutes.loginScreen,
+                        (routes) => false,
+                      );
                     },
                   ),
                   child: MyElevatedButton(

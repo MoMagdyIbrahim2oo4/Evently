@@ -23,5 +23,18 @@
   "dontHaveAnAccount": "Don’t have an account ?",
   "signUp": "Signup",
   "or": "Or",
-  "loginwithGoogle": "Login with Google"
+  "loginwithGoogle": "Login with Google",
+  "createYourAccount": "Create your account",
+  "enterYourName": "Enter your name",
+  "confirmYourPassword": "Confirm your password",
+  "signUp2": "Sign up",
+  "signUpWithgoogle": "Sign up with Google",
+  "alreadyHaveAnAccount": "Already have an account?",
+  "pleaseEnterEmail": "Please , Enter Email",
+  "invalidEmail": "Invalid Email",
+  "pleaseEnterPassword": "Please , Enter Password",
+  "invalidPassword": "Invalid Password",
+  "pleaseEnterUserName": "Please , Enter UserName",
+  "invalidUserName": "Invalid UserName",
+  "invalidConfirmation": "Invalid Confirmation"
 }

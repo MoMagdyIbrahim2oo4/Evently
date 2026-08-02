@@ -23,5 +23,18 @@
   "dontHaveAnAccount": "ليس لديك حساب؟",
   "signUp": "اشتراك",
   "or": "أو",
-  "loginwithGoogle": "تسجيل الدخول باستخدام جوجل"
+  "loginwithGoogle": "تسجيل الدخول باستخدام جوجل",
+  "createYourAccount": "أنشئ حسابك",
+  "enterYourName": "أدخل اسمك",
+  "confirmYourPassword": "أكد كلمة مرورك",
+  "signUp2": "اشتراك",
+  "signUpWithgoogle": "سجل باستخدام جوجل",
+  "alreadyHaveAnAccount": "هل لديك حساب بالفعل؟",
+  "pleaseEnterEmail": "الرجاء إدخال البريد الإلكتروني",
+  "invalidEmail": "بريد إلكتروني غير صالح",
+  "pleaseEnterPassword": "الرجاء إدخال كلمة المرور",
+  "invalidPassword": "كلمة مرور غير صحيحة",
+  "pleaseEnterUserName": "الرجاء إدخال اسم المستخدم",
+  "invalidUserName": "اسم مستخدم غير صالح",
+  "invalidConfirmation": "تأكيد غير صالح"
 }

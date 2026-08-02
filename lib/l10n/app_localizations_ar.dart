@@ -86,4 +86,43 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get loginwithGoogle => 'تسجيل الدخول باستخدام جوجل';
+
+  @override
+  String get createYourAccount => 'أنشئ حسابك';
+
+  @override
+  String get enterYourName => 'أدخل اسمك';
+
+  @override
+  String get confirmYourPassword => 'أكد كلمة مرورك';
+
+  @override
+  String get signUp2 => 'اشتراك';
+
+  @override
+  String get signUpWithgoogle => 'سجل باستخدام جوجل';
+
+  @override
+  String get alreadyHaveAnAccount => 'هل لديك حساب بالفعل؟';
+
+  @override
+  String get pleaseEnterEmail => 'الرجاء إدخال البريد الإلكتروني';
+
+  @override
+  String get invalidEmail => 'بريد إلكتروني غير صالح';
+
+  @override
+  String get pleaseEnterPassword => 'الرجاء إدخال كلمة المرور';
+
+  @override
+  String get invalidPassword => 'كلمة مرور غير صحيحة';
+
+  @override
+  String get pleaseEnterUserName => 'الرجاء إدخال اسم المستخدم';
+
+  @override
+  String get invalidUserName => 'اسم مستخدم غير صالح';
+
+  @override
+  String get invalidConfirmation => 'تأكيد غير صالح';
 }

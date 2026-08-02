@@ -86,4 +86,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loginwithGoogle => 'Login with Google';
+
+  @override
+  String get createYourAccount => 'Create your account';
+
+  @override
+  String get enterYourName => 'Enter your name';
+
+  @override
+  String get confirmYourPassword => 'Confirm your password';
+
+  @override
+  String get signUp2 => 'Sign up';
+
+  @override
+  String get signUpWithgoogle => 'Sign up with Google';
+
+  @override
+  String get alreadyHaveAnAccount => 'Already have an account?';
+
+  @override
+  String get pleaseEnterEmail => 'Please , Enter Email';
+
+  @override
+  String get invalidEmail => 'Invalid Email';
+
+  @override
+  String get pleaseEnterPassword => 'Please , Enter Password';
+
+  @override
+  String get invalidPassword => 'Invalid Password';
+
+  @override
+  String get pleaseEnterUserName => 'Please , Enter UserName';
+
+  @override
+  String get invalidUserName => 'Invalid UserName';
+
+  @override
+  String get invalidConfirmation => 'Invalid Confirmation';
 }
