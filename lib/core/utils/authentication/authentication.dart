@@ -2,7 +2,7 @@ import 'package:evently/l10n/app_localizations.dart';
 import 'package:flutter/cupertino.dart';
 
 class Authentication {
-  static String? emailValidation(BuildContext context, String? email) {
+  static String? emailValidation(BuildContext context,String? email) {
     if (email == null || email.isEmpty) {
       return AppLocalizations.of(context)!.pleaseEnterEmail;
     } else if (!RegExp(
@@ -20,7 +20,7 @@ class Authentication {
     }
   }
 
-  static String? passwordValidation(BuildContext context, String? password) {
+  static String? passwordValidation(BuildContext context,String? password) {
     if (password == null || password.isEmpty) {
       return AppLocalizations.of(context)!.pleaseEnterPassword;
     } else if (!RegExp(
@@ -32,16 +32,14 @@ class Authentication {
     }
   }
 
-  static String? usernameValidation(BuildContext context, String? username) {
-    if (username == null || username.isEmpty) {
+  static String? usernameValidation(BuildContext context,String? username){
+    if(username==null||username.isEmpty){
       return AppLocalizations.of(context)!.pleaseEnterUserName;
     }
-    else
-    if (!RegExp(r"^\s*([A-Za-z]{3,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$").hasMatch(
-        username)) {
+    else if(!RegExp(r"^\s*([A-Za-z]{3,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$").hasMatch(username)){
       return AppLocalizations.of(context)!.invalidUserName;
     }
-    else {
+    else{
       return null;
     }
   }
