@@ -24,4 +24,25 @@ class AppTextStyle {
       fontSize: 20.sp,
       fontWeight: .w500
   );
+
+  static final TextStyle Medium14 = TextStyle(
+      fontSize: 14.sp,
+      fontWeight: .w400
+  );
+
+  static final TextStyle semiBold14Underlined = TextStyle(
+      fontSize: 14.sp,
+      fontWeight: .w600,
+      decoration: TextDecoration.underline
+  );
+
+  static final TextStyle semiBold14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: .w600,
+  );
+
+  static final TextStyle Regular14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: .w400,
+  );
 }
