@@ -21,6 +21,16 @@ class AppTheme {
       headlineLarge: AppTextStyle.darkGray20SemiBold.copyWith(
         color: AppColors.darkBlue,
       ),
+      labelSmall: AppTextStyle.Medium14.copyWith(
+        color: AppColors.mediumDarkGray,
+      ),
+      headlineSmall: AppTextStyle.darkGray20SemiBold.copyWith(
+        color: AppColors.darkBlue,
+      ),
+      bodySmall: AppTextStyle.mediumDarkGray16Regular.copyWith(
+        color: AppColors.mediumDarkGray,
+      ),
+
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -47,10 +57,10 @@ class AppTheme {
     appBarTheme: AppBarTheme(backgroundColor: AppColors.backgroundLight),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: AppColors.DarkNavyBlue,
+      fillColor: AppColors.white,
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16.r),
-        borderSide: BorderSide(color: AppColors.deepBlue),
+        borderSide: BorderSide(color: AppColors.lightGray),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16.r),
@@ -64,6 +74,13 @@ class AppTheme {
         borderRadius: BorderRadius.circular(16.r),
         borderSide: BorderSide(color: Colors.red),
       ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+            foregroundColor: AppColors.darkBlue,
+            padding: EdgeInsets.zero,
+            textStyle: AppTextStyle.semiBold14
+        )
     ),
   );
 
@@ -81,7 +98,11 @@ class AppTheme {
         color: AppColors.white,
       ),
       labelMedium: AppTextStyle.white18Medium.copyWith(color: AppColors.white),
+      labelSmall: AppTextStyle.Medium14.copyWith(
+        color: AppColors.white,
+      ),
     ),
+
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.lightBlue,

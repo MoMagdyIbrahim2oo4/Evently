@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
           routes: {
             AppRoutes.setupScreen: (context) => SetupScreen(),
             AppRoutes.onboardingScreen: (context) => OnboardingScreen(),
-            AppRoutes.loginScreen: (context) => LoginScreen()
+            AppRoutes.loginScreen: (context) => LoginScreen(),
           },
           initialRoute: afterOnboardingProvider.flagRoute ?
           AppRoutes.loginScreen :
@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
           // themeMode: themeProvider.themeMode,
-          themeMode: ThemeMode.light,
+          themeMode: ThemeMode.dark,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
           // locale: languageProvider.language

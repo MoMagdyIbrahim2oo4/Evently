@@ -1,3 +1,4 @@
+import 'package:evently/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 typedef Validator = String? Function(String?)?;
@@ -8,7 +9,10 @@ class CustomTextFormField extends StatelessWidget {
   final int lines;
   bool? isObscured;
   String? obsecureChar;
-  Widget? prefIcon;
+  IconData prefIcon;
+  String hint;
+  IconData? suffixIcon;
+  Function()? suffixPressed;
 
   CustomTextFormField({
     super.key,
@@ -17,7 +21,10 @@ class CustomTextFormField extends StatelessWidget {
     this.lines = 1,
     this.isObscured,
     this.obsecureChar,
-    this.prefIcon,
+    required this.prefIcon,
+    required this.hint,
+    this.suffixIcon,
+    this.suffixPressed
   });
 
   @override
@@ -28,7 +35,17 @@ class CustomTextFormField extends StatelessWidget {
       maxLines: lines,
       obscureText: isObscured == null ? false : isObscured!,
       obscuringCharacter: "*",
-      decoration: InputDecoration(prefixIcon: prefIcon),
+      decoration: InputDecoration(
+          prefixIcon: Icon(prefIcon),
+          prefixIconColor: AppColors.comfortGray,
+          hintText: hint,
+          hintStyle: Theme
+              .of(context)
+              .textTheme
+              .labelSmall,
+          suffixIcon: suffixIcon == null ? null : IconButton(
+              onPressed: suffixPressed, icon: Icon(suffixIcon))
+      ),
     );
   }
 }
