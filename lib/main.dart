@@ -7,6 +7,7 @@ import 'package:evently/presentation/screens/login_screen.dart';
 
 // import 'package:evently/presentation/screens/login_screen.dart';
 import 'package:evently/presentation/screens/onboarding_screen.dart';
+import 'package:evently/presentation/screens/register_screen.dart';
 import 'package:evently/presentation/screens/setup_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
             AppRoutes.setupScreen: (context) => SetupScreen(),
             AppRoutes.onboardingScreen: (context) => OnboardingScreen(),
             AppRoutes.loginScreen: (context) => LoginScreen(),
+            AppRoutes.registerScreen: (context) => RegisterScreen(),
           },
           initialRoute: afterOnboardingProvider.flagRoute ?
           AppRoutes.loginScreen :
@@ -73,12 +75,12 @@ class MyApp extends StatelessWidget {
           // initialRoute: AppRoutes.setupScreen,
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
-          // themeMode: themeProvider.themeMode,
-          themeMode: ThemeMode.dark,
+            themeMode: themeProvider.themeMode,
+            // themeMode: ThemeMode.dark,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-          // locale: languageProvider.language
-          locale: Locale("en"),
+            locale: languageProvider.language
+          // locale: Locale("en"),
         );
       },
     );

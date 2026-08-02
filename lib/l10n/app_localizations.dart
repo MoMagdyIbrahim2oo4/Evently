@@ -247,6 +247,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Login with Google'**
   String get loginwithGoogle;
+
+  /// No description provided for @createYourAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your account'**
+  String get createYourAccount;
+
+  /// No description provided for @enterYourName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your name'**
+  String get enterYourName;
+
+  /// No description provided for @confirmYourPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm your password'**
+  String get confirmYourPassword;
+
+  /// No description provided for @signUp2.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up'**
+  String get signUp2;
+
+  /// No description provided for @signUpWithgoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up with Google'**
+  String get signUpWithgoogle;
+
+  /// No description provided for @alreadyHaveAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get alreadyHaveAnAccount;
+
+  /// No description provided for @pleaseEnterEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please , Enter Email'**
+  String get pleaseEnterEmail;
+
+  /// No description provided for @invalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid Email'**
+  String get invalidEmail;
+
+  /// No description provided for @pleaseEnterPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Please , Enter Password'**
+  String get pleaseEnterPassword;
+
+  /// No description provided for @invalidPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid Password'**
+  String get invalidPassword;
+
+  /// No description provided for @pleaseEnterUserName.
+  ///
+  /// In en, this message translates to:
+  /// **'Please , Enter UserName'**
+  String get pleaseEnterUserName;
+
+  /// No description provided for @invalidUserName.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid UserName'**
+  String get invalidUserName;
+
+  /// No description provided for @invalidConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid Confirmation'**
+  String get invalidConfirmation;
 }
 
 class _AppLocalizationsDelegate
