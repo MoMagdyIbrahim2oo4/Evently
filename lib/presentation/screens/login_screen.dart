@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomTextFormField(
                     controller: emailController,
                     validator: (value) {
-                      Authentication.emailValidation(context, value);
+                      return Authentication.emailValidation(context, value);
                     },
                     prefIcon: Icons.mail,
                     hint: AppLocalizations.of(context)!.enterYourEmail,
@@ -94,9 +94,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     label: AppLocalizations.of(context)!.login,
                     onpressed: () {
                       if (formState.currentState!.validate()) {
-                        print("valid");
-                      } else {
-                        print("Invalid");
+                        Navigator.of(
+                          context,
+                        ).pushReplacementNamed(AppRoutes.mainLayoutScreen);
                       }
                     },
                   ),

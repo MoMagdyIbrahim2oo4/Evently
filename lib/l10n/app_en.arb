@@ -36,5 +36,8 @@
   "invalidPassword": "Invalid Password",
   "pleaseEnterUserName": "Please , Enter UserName",
   "invalidUserName": "Invalid UserName",
-  "invalidConfirmation": "Invalid Confirmation"
+  "invalidConfirmation": "Invalid Confirmation",
+  "home": "Home",
+  "favorite": "Favorite",
+  "profile": "Profile"
 }
