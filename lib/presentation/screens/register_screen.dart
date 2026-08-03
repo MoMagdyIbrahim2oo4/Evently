@@ -29,7 +29,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController passwordController = TextEditingController();
   GlobalKey<FormState> formState = GlobalKey();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,9 +118,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     label: AppLocalizations.of(context)!.signUp2,
                     onpressed: () {
                       if (formState.currentState!.validate()) {
-                        print("valid");
-                      } else {
-                        print("Invalid");
+                        Navigator.of(context).pushNamedAndRemoveUntil(
+                          AppRoutes.mainLayoutScreen,
+                          (routes) => false,
+                        );
                       }
                     },
                   ),

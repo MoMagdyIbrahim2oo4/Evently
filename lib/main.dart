@@ -4,6 +4,7 @@ import 'package:evently/core/utils/app_routes.dart';
 import 'package:evently/core/utils/app_theme.dart';
 import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/presentation/screens/login_screen.dart';
+import 'package:evently/presentation/screens/main_layout_screen.dart';
 import 'package:evently/presentation/screens/onboarding_screen.dart';
 import 'package:evently/presentation/screens/register_screen.dart';
 import 'package:evently/presentation/screens/setup_screen.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
             AppRoutes.onboardingScreen: (context) => OnboardingScreen(),
             AppRoutes.loginScreen: (context) => LoginScreen(),
             AppRoutes.registerScreen:(context)=>RegisterScreen(),
+            AppRoutes.mainLayoutScreen: (context) => MainLayoutScreen(),
           },
           initialRoute: afterOnboardingProvider.flagRoute ?
           AppRoutes.loginScreen :
@@ -73,12 +75,12 @@ class MyApp extends StatelessWidget {
           // initialRoute: AppRoutes.setupScreen,
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
-          themeMode: themeProvider.themeMode,
-          // themeMode: ThemeMode.dark,
+          // themeMode: themeProvider.themeMode,
+          themeMode: ThemeMode.dark,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-          locale: languageProvider.language
-          // locale: Locale("en"),
+          // locale: languageProvider.language
+          locale: Locale("en"),
         );
       },
     );

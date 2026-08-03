@@ -125,4 +125,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get invalidConfirmation => 'تأكيد غير صالح';
+
+  @override
+  String get home => 'الصفحة الرئيسية';
+
+  @override
+  String get favorite => 'المفضلة';
+
+  @override
+  String get profile => 'حسابي';
 }

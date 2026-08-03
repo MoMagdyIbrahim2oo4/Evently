@@ -7,6 +7,17 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     scaffoldBackgroundColor: AppColors.backgroundLight,
+    colorScheme: ColorScheme(
+      brightness: Brightness.light,
+      primary: AppColors.darkBlue,
+      onPrimary: AppColors.white,
+      secondary: AppColors.backgroundLight,
+      onSecondary: AppColors.lightGray,
+      error: Colors.red,
+      onError: AppColors.white,
+      surface: AppColors.white,
+      onSurface: Colors.black,
+    ),
     textTheme: TextTheme(
       headlineMedium: AppTextStyle.darkGray20SemiBold.copyWith(
         color: AppColors.darkGray,
@@ -30,7 +41,6 @@ class AppTheme {
       bodySmall: AppTextStyle.mediumDarkGray16Regular.copyWith(
         color: AppColors.mediumDarkGray,
       ),
-
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -76,17 +86,40 @@ class AppTheme {
       ),
     ),
     textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-            foregroundColor: AppColors.darkBlue,
-            padding: EdgeInsets.zero,
-            textStyle: AppTextStyle.semiBold14
-        )
+      style: TextButton.styleFrom(
+        foregroundColor: AppColors.darkBlue,
+        padding: EdgeInsets.zero,
+        textStyle: AppTextStyle.semiBold14,
+      ),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColors.white,
+      elevation: 0,
+      selectedItemColor: AppColors.darkBlue,
+      unselectedItemColor: AppColors.comfortGray,
+      type: BottomNavigationBarType.fixed,
+    ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: AppColors.darkBlue,
+      foregroundColor: AppColors.white,
+      shape: CircleBorder(),
     ),
   );
 
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: AppColors.backgrounddark,
+    colorScheme: ColorScheme(
+      brightness: Brightness.dark,
+      primary: AppColors.lightBlue,
+      onPrimary: AppColors.white,
+      secondary: AppColors.backgrounddark,
+      onSecondary: AppColors.white,
+      error: Colors.red,
+      onError: AppColors.white,
+      surface: AppColors.backgrounddark,
+      onSurface: AppColors.white,
+    ),
     textTheme: TextTheme(
       headlineMedium: AppTextStyle.darkGray20SemiBold.copyWith(
         color: AppColors.white,
@@ -98,9 +131,7 @@ class AppTheme {
         color: AppColors.white,
       ),
       labelMedium: AppTextStyle.white18Medium.copyWith(color: AppColors.white),
-      labelSmall: AppTextStyle.Medium14.copyWith(
-        color: AppColors.white,
-      ),
+      labelSmall: AppTextStyle.Medium14.copyWith(color: AppColors.white),
     ),
 
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -145,6 +176,18 @@ class AppTheme {
         borderRadius: BorderRadius.circular(16.r),
         borderSide: BorderSide(color: Colors.red),
       ),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColors.backgrounddark,
+      elevation: 0,
+      selectedItemColor: AppColors.lightBlue,
+      unselectedItemColor: AppColors.comfortGray,
+      type: BottomNavigationBarType.fixed,
+    ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: AppColors.lightBlue,
+      foregroundColor: AppColors.white,
+      shape: CircleBorder(),
     ),
   );
 }

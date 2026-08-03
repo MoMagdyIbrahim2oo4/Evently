@@ -36,5 +36,8 @@
   "invalidPassword": "كلمة مرور غير صحيحة",
   "pleaseEnterUserName": "الرجاء إدخال اسم المستخدم",
   "invalidUserName": "اسم مستخدم غير صالح",
-  "invalidConfirmation": "تأكيد غير صالح"
+  "invalidConfirmation": "تأكيد غير صالح",
+  "home": "الصفحة الرئيسية",
+  "favorite": "المفضلة",
+  "profile": "حسابي"
 }
