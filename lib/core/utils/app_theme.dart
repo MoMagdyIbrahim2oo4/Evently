@@ -114,7 +114,7 @@ class AppTheme {
       primary: AppColors.lightBlue,
       onPrimary: AppColors.white,
       secondary: AppColors.backgrounddark,
-      onSecondary: AppColors.white,
+      onSecondary: AppColors.lightBlue,
       error: Colors.red,
       onError: AppColors.white,
       surface: AppColors.backgrounddark,
