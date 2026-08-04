@@ -1,10 +1,12 @@
+import 'package:evently/data/model/event_type.dart';
+import 'package:evently/presentation/widgets/category_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 
-import '../../core/constants/app_colors.dart';
-
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({super.key});
+  List<EventType> categories;
+
+  HomeHeader({super.key, required this.categories});
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +49,18 @@ class HomeHeader extends StatelessWidget {
                 style: Theme.of(context).textTheme.labelMedium,
               ),
             ),
+          ],
+        ),
+        SizedBox(height: 24.h,),
+        TabBar(
+          dividerColor: Colors.transparent,
+          isScrollable: true,
+          tabAlignment: TabAlignment.start,
+          labelPadding: EdgeInsets.only(right: 10.w, left: 10.w),
+          padding: EdgeInsets.zero,
+          indicatorColor: Colors.transparent,
+          tabs: [
+            for (final category in categories) CategoryTab(category: category),
           ],
         ),
       ],

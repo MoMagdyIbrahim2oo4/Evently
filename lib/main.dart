@@ -75,12 +75,12 @@ class MyApp extends StatelessWidget {
           // initialRoute: AppRoutes.setupScreen,
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
-          // themeMode: themeProvider.themeMode,
-          themeMode: ThemeMode.dark,
+            themeMode: themeProvider.themeMode,
+            // themeMode: ThemeMode.dark,
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-          // locale: languageProvider.language
-          locale: Locale("en"),
+            locale: languageProvider.language
+          // locale: Locale("en"),
         );
       },
     );
