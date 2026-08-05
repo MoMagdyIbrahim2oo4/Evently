@@ -22,4 +22,5 @@ class AppAssets {
   static const String bookClubDark = '${_initialPath}bookclub_dark.png';
   static const String birthDayLight = '${_initialPath}birthday_light.png';
   static const String birthDayDark = '${_initialPath}birthday_dark.png';
+  static const String routeProfile = '${_initialPath}route_profile.png';
 }

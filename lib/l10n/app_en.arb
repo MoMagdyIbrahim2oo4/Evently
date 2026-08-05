@@ -39,5 +39,7 @@
   "invalidConfirmation": "Invalid Confirmation",
   "home": "Home",
   "favorite": "Favorite",
-  "profile": "Profile"
+  "profile": "Profile",
+  "darkMode": "Dark mode",
+  "logOut": "Logout"
 }

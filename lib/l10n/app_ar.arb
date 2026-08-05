@@ -39,5 +39,7 @@
   "invalidConfirmation": "تأكيد غير صالح",
   "home": "الصفحة الرئيسية",
   "favorite": "المفضلة",
-  "profile": "حسابي"
+  "profile": "حسابي",
+  "darkMode": "الوضع الداكن",
+  "logOut": "تسجيل الخروج"
 }
