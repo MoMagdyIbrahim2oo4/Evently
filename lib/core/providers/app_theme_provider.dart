@@ -6,6 +6,9 @@ class ThemeProvider extends ChangeNotifier {
   // الثيم الافتراضي عند تشغيل التطبيق لأول مرة
   ThemeMode _themeMode = ThemeMode.system;
 
+  // Getter لمعرفة هل الثيم الحالي Dark
+  bool get isDark => _themeMode == ThemeMode.dark;
+
   // المفتاح اللي هنخزن بيه قيمة الثيم في SharedPreferences
   static const String _key = "theme_mode";
 

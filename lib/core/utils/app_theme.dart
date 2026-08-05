@@ -18,6 +18,7 @@ class AppTheme {
       surface: AppColors.white,
       onSurface: Colors.black,
     ),
+    cardColor: AppColors.backgroundLight,
     textTheme: TextTheme(
       headlineMedium: AppTextStyle.darkGray20SemiBold.copyWith(
         color: AppColors.darkGray,
@@ -40,6 +41,11 @@ class AppTheme {
       ),
       bodySmall: AppTextStyle.mediumDarkGray16Regular.copyWith(
         color: AppColors.mediumDarkGray,
+      ),
+      bodyLarge: AppTextStyle.semiBold20.copyWith(color: AppColors.darkGray),
+      displaySmall: AppTextStyle.regular14.copyWith(color: AppColors.darkGray),
+      titleSmall: AppTextStyle.mediumDarkGray16Regular.copyWith(
+        color: AppColors.darkGray,
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -112,7 +118,7 @@ class AppTheme {
     colorScheme: ColorScheme(
       brightness: Brightness.dark,
       primary: AppColors.lightBlue,
-      onPrimary: AppColors.white,
+      onPrimary: AppColors.DarkNavyBlue,
       secondary: AppColors.backgrounddark,
       onSecondary: AppColors.lightBlue,
       error: Colors.red,
@@ -120,6 +126,7 @@ class AppTheme {
       surface: AppColors.backgrounddark,
       onSurface: AppColors.white,
     ),
+    cardColor: AppColors.lightBlue,
     textTheme: TextTheme(
       headlineMedium: AppTextStyle.darkGray20SemiBold.copyWith(
         color: AppColors.white,
@@ -132,6 +139,14 @@ class AppTheme {
       ),
       labelMedium: AppTextStyle.white18Medium.copyWith(color: AppColors.white),
       labelSmall: AppTextStyle.Medium14.copyWith(color: AppColors.white),
+      bodyLarge: AppTextStyle.semiBold20.copyWith(color: AppColors.white),
+      displaySmall: AppTextStyle.regular14.copyWith(color: AppColors.white),
+      bodySmall: AppTextStyle.mediumDarkGray16Regular.copyWith(
+        color: AppColors.white,
+      ),
+      titleSmall: AppTextStyle.mediumDarkGray16Regular.copyWith(
+        color: AppColors.white,
+      ),
     ),
 
     elevatedButtonTheme: ElevatedButtonThemeData(

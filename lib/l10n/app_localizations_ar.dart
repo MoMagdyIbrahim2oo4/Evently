@@ -134,4 +134,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get profile => 'حسابي';
+
+  @override
+  String get darkMode => 'الوضع الداكن';
+
+  @override
+  String get logOut => 'تسجيل الخروج';
 }
