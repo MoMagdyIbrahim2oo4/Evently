@@ -19,6 +19,7 @@ class AppTheme {
       onSurface: Colors.black,
     ),
     cardColor: AppColors.backgroundLight,
+    highlightColor: AppColors.white,
     textTheme: TextTheme(
       headlineMedium: AppTextStyle.darkGray20SemiBold.copyWith(
         color: AppColors.darkGray,
@@ -47,6 +48,9 @@ class AppTheme {
       titleSmall: AppTextStyle.mediumDarkGray16Regular.copyWith(
         color: AppColors.darkGray,
       ),
+      titleLarge: AppTextStyle.darkBlue18Medium.copyWith(
+        color: AppColors.darkGray,
+      ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -70,7 +74,10 @@ class AppTheme {
         fixedSize: Size(63, 32),
       ),
     ),
-    appBarTheme: AppBarTheme(backgroundColor: AppColors.backgroundLight),
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.backgroundLight,
+      centerTitle: true,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: AppColors.white,
@@ -127,6 +134,7 @@ class AppTheme {
       onSurface: AppColors.white,
     ),
     cardColor: AppColors.lightBlue,
+    highlightColor: AppColors.backgrounddark,
     textTheme: TextTheme(
       headlineMedium: AppTextStyle.darkGray20SemiBold.copyWith(
         color: AppColors.white,
@@ -145,6 +153,9 @@ class AppTheme {
         color: AppColors.white,
       ),
       titleSmall: AppTextStyle.mediumDarkGray16Regular.copyWith(
+        color: AppColors.white,
+      ),
+      titleLarge: AppTextStyle.darkBlue18Medium.copyWith(
         color: AppColors.white,
       ),
     ),
@@ -171,7 +182,10 @@ class AppTheme {
         fixedSize: Size(63, 32),
       ),
     ),
-    appBarTheme: AppBarTheme(backgroundColor: AppColors.backgrounddark),
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.backgrounddark,
+      centerTitle: true,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: AppColors.DarkNavyBlue,

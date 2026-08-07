@@ -38,7 +38,7 @@ class EventType {
         icon: FontAwesomeIcons.cakeCandles,
         type: "BirthDay",
         imageLightPath: AppAssets.birthDayLight,
-        imageDarkPath: AppAssets.bookClubDark,
+        imageDarkPath: AppAssets.birthDayDark,
       ),
       EventType(
         icon: FontAwesomeIcons.meetup,

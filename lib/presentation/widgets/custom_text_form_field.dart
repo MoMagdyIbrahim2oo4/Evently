@@ -5,11 +5,11 @@ typedef Validator = String? Function(String?)?;
 
 class CustomTextFormField extends StatelessWidget {
   final TextEditingController? controller;
-  final Validator validator;
+  final Validator? validator;
   final int lines;
   bool? isObscured;
   String? obsecureChar;
-  IconData prefIcon;
+  IconData? prefIcon;
   String hint;
   IconData? suffixIcon;
   Function()? suffixPressed;
@@ -17,11 +17,11 @@ class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
     super.key,
     this.controller,
-    required this.validator,
+    this.validator,
     this.lines = 1,
     this.isObscured,
     this.obsecureChar,
-    required this.prefIcon,
+    this.prefIcon,
     required this.hint,
     this.suffixIcon,
     this.suffixPressed
@@ -36,7 +36,7 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: isObscured == null ? false : isObscured!,
       obscuringCharacter: "*",
       decoration: InputDecoration(
-          prefixIcon: Icon(prefIcon),
+          prefixIcon: prefIcon == null ? null : Icon(prefIcon),
           prefixIconColor: AppColors.comfortGray,
           hintText: hint,
           hintStyle: Theme
