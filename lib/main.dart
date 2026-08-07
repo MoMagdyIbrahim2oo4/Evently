@@ -3,11 +3,13 @@ import 'package:evently/core/providers/app_theme_provider.dart';
 import 'package:evently/core/utils/app_routes.dart';
 import 'package:evently/core/utils/app_theme.dart';
 import 'package:evently/l10n/app_localizations.dart';
+import 'package:evently/presentation/screens/add_event_screen.dart';
 import 'package:evently/presentation/screens/login_screen.dart';
 import 'package:evently/presentation/screens/main_layout_screen.dart';
 import 'package:evently/presentation/screens/onboarding_screen.dart';
 import 'package:evently/presentation/screens/register_screen.dart';
 import 'package:evently/presentation/screens/setup_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
@@ -16,10 +18,14 @@ import 'package:provider/provider.dart';
 
 import 'core/providers/app_localization_provider.dart';
 import 'core/utils/shared_pref.dart';
+import 'firebase_options.dart';
 // import 'core/utils/shared_pref.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   bool isCompleted = await SharedPref.getKey();
 
@@ -68,6 +74,7 @@ class MyApp extends StatelessWidget {
             AppRoutes.loginScreen: (context) => LoginScreen(),
             AppRoutes.registerScreen:(context)=>RegisterScreen(),
             AppRoutes.mainLayoutScreen: (context) => MainLayoutScreen(),
+            AppRoutes.addEventScreen: (context) => AddEventScreen(),
           },
           initialRoute: afterOnboardingProvider.flagRoute ?
           AppRoutes.loginScreen :

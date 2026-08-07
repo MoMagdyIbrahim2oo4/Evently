@@ -1,3 +1,4 @@
+import 'package:evently/core/utils/app_routes.dart';
 import 'package:evently/presentation/screens/tabs/favourite_tab.dart';
 import 'package:evently/presentation/screens/tabs/home_tab.dart';
 import 'package:evently/presentation/screens/tabs/profile_tab.dart';
@@ -28,7 +29,9 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed(AppRoutes.addEventScreen);
+        },
         child: Icon(Icons.add),
       ),
     );
