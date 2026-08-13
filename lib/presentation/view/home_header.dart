@@ -1,15 +1,26 @@
+import 'package:evently/core/providers/auth_provider.dart';
 import 'package:evently/data/model/event_type.dart';
 import 'package:evently/presentation/widgets/category_tab.dart';
+import 'package:evently/presentation/widgets/event_type_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
+import 'package:provider/provider.dart';
 
-class HomeHeader extends StatelessWidget {
+class HomeHeader extends StatefulWidget {
   List<EventType> categories;
 
   HomeHeader({super.key, required this.categories});
 
   @override
+  State<HomeHeader> createState() => _HomeHeaderState();
+}
+
+class _HomeHeaderState extends State<HomeHeader> {
+  int currentIndex = 0;
+
+  @override
   Widget build(BuildContext context) {
+    final authProvider = context.watch<AuthProvider>();
     return Column(
       children: [
         Row(
@@ -21,7 +32,7 @@ class HomeHeader extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 Text(
-                  "John Safwat",
+                  authProvider.currentUser!.userName,
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ],
@@ -51,7 +62,7 @@ class HomeHeader extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 24.h,),
+        SizedBox(height: 24.h),
         TabBar(
           dividerColor: Colors.transparent,
           isScrollable: true,
@@ -59,9 +70,16 @@ class HomeHeader extends StatelessWidget {
           labelPadding: EdgeInsets.only(right: 10.w, left: 10.w),
           padding: EdgeInsets.zero,
           indicatorColor: Colors.transparent,
-          tabs: [
-            for (final category in categories) CategoryTab(category: category),
-          ],
+            onTap: (index) {
+              setState(() {
+                currentIndex = index;
+              });
+            },
+            tabs: widget.categories
+                .map((category) =>
+                EventTypeItem(category: category,
+                    isSelected: currentIndex ==
+                        widget.categories.indexOf(category))).toList()
         ),
       ],
     );

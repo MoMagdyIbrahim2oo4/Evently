@@ -355,6 +355,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Logout'**
   String get logOut;
+
+  /// No description provided for @addEvent.
+  ///
+  /// In en, this message translates to:
+  /// **'Add event'**
+  String get addEvent;
+
+  /// No description provided for @title.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get title;
+
+  /// No description provided for @eventTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Event Title'**
+  String get eventTitle;
+
+  /// No description provided for @description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get description;
+
+  /// No description provided for @eventDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Event Description....'**
+  String get eventDescription;
+
+  /// No description provided for @eventDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Event Date'**
+  String get eventDate;
+
+  /// No description provided for @chooseDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Date'**
+  String get chooseDate;
+
+  /// No description provided for @eventTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Event Time'**
+  String get eventTime;
+
+  /// No description provided for @chooseTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose time'**
+  String get chooseTime;
+
+  /// No description provided for @all.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get all;
+
+  /// No description provided for @sport.
+  ///
+  /// In en, this message translates to:
+  /// **'Sport'**
+  String get sport;
+
+  /// No description provided for @bookClub.
+  ///
+  /// In en, this message translates to:
+  /// **'Book Club'**
+  String get bookClub;
+
+  /// No description provided for @birthDay.
+  ///
+  /// In en, this message translates to:
+  /// **'BirthDay'**
+  String get birthDay;
+
+  /// No description provided for @meeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Meeting'**
+  String get meeting;
+
+  /// No description provided for @exhibition.
+  ///
+  /// In en, this message translates to:
+  /// **'Exhibition'**
+  String get exhibition;
 }
 
 class _AppLocalizationsDelegate
