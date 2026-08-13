@@ -1,5 +1,5 @@
-import 'package:evently/core/providers/after_onboarding_provider.dart';
 import 'package:evently/core/providers/app_theme_provider.dart';
+import 'package:evently/core/providers/auth_provider.dart';
 import 'package:evently/core/utils/app_routes.dart';
 import 'package:evently/core/utils/app_theme.dart';
 import 'package:evently/l10n/app_localizations.dart';
@@ -19,7 +19,6 @@ import 'package:provider/provider.dart';
 import 'core/providers/app_localization_provider.dart';
 import 'core/utils/shared_pref.dart';
 import 'firebase_options.dart';
-// import 'core/utils/shared_pref.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +26,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  bool isCompleted = await SharedPref.getKey();
+  bool isOnboardingSeen = await SharedPref.getKey();
+
 
   runApp(
     DevicePreview(
@@ -37,20 +37,20 @@ void main() async {
             providers: [
               ChangeNotifierProvider(create: (_) => AppLocalizationProvider()),
               ChangeNotifierProvider(create: (_) => ThemeProvider()),
-
-              ChangeNotifierProvider(
-                create: (_) =>
-                    AfterOnboardingProvider(initialValue: isCompleted),
-              ),
+              ChangeNotifierProvider(create: (_) =>
+              AuthProvider()
+                ..listenToAuthChanges()),
             ],
-            child: const MyApp(),
+            child: MyApp(isOnboardingSeen: isOnboardingSeen,),
           ),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool isOnboardingSeen;
+
+  MyApp({super.key, required this.isOnboardingSeen});
 
 
   @override
@@ -58,8 +58,6 @@ class MyApp extends StatelessWidget {
     AppLocalizationProvider languageProvider = Provider.of(
         context, listen: true);
     ThemeProvider themeProvider = Provider.of(context, listen: true);
-    AfterOnboardingProvider afterOnboardingProvider = Provider.of(
-        context, listen: true);
     return ScreenUtilPlusInit(
       designSize: const Size(375, 812),
       minTextAdapt: true,
@@ -76,9 +74,10 @@ class MyApp extends StatelessWidget {
             AppRoutes.mainLayoutScreen: (context) => MainLayoutScreen(),
             AppRoutes.addEventScreen: (context) => AddEventScreen(),
           },
-          initialRoute: afterOnboardingProvider.flagRoute ?
-          AppRoutes.loginScreen :
-          AppRoutes.setupScreen,
+            home: _Gate(isOnboardingSeen: isOnboardingSeen),
+            // initialRoute: isOnboardingSeen ?
+            // AppRoutes.loginScreen :
+            // AppRoutes.setupScreen,
           // initialRoute: AppRoutes.setupScreen,
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
@@ -93,3 +92,27 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class _Gate extends StatelessWidget {
+  final bool isOnboardingSeen;
+
+  _Gate({super.key, required this.isOnboardingSeen});
+
+  @override
+  Widget build(BuildContext context) {
+    final authProvider = context.watch<AuthProvider>();
+    if (!isOnboardingSeen) {
+      return SetupScreen();
+    }
+    if (authProvider.isLoading) {
+      return Scaffold(body: Center(child: CircularProgressIndicator(),),);
+    }
+    if (authProvider.currentUser == null) {
+      return LoginScreen();
+    }
+    else {
+      return MainLayoutScreen();
+    }
+  }
+}
+

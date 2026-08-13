@@ -1,5 +1,6 @@
 import 'package:evently/core/providers/app_theme_provider.dart';
 import 'package:evently/data/model/event_type.dart';
+import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/presentation/widgets/custom_text_form_field.dart';
 import 'package:evently/presentation/widgets/date_or_time.dart';
 import 'package:evently/presentation/widgets/event_type_item.dart';
@@ -17,7 +18,6 @@ class AddEventScreen extends StatefulWidget {
 }
 
 class _AddEventScreenState extends State<AddEventScreen> {
-  List<EventType> category = EventType.getCategories().sublist(1);
 
   int currentIndex = 0;
   DateTime? _dateTime;
@@ -27,6 +27,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
 
   @override
   Widget build(BuildContext context) {
+    List<EventType> category = EventType.getCategories(context).sublist(1);
     var themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       appBar: AppBar(
@@ -40,7 +41,10 @@ class _AddEventScreenState extends State<AddEventScreen> {
             child: Icon(Icons.arrow_back_ios_new_outlined),
           ),
         ),
-        title: Text("Add event", style: Theme.of(context).textTheme.titleLarge),
+        title: Text(AppLocalizations.of(context)!.addEvent, style: Theme
+            .of(context)
+            .textTheme
+            .titleLarge),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.r),
@@ -86,30 +90,37 @@ class _AddEventScreenState extends State<AddEventScreen> {
                   itemCount: category.length,
                 ),
               ),
-              Text("Title", style: Theme.of(context).textTheme.titleSmall),
-              CustomTextFormField(hint: "Event Title"),
+              Text(AppLocalizations.of(context)!.title, style: Theme
+                  .of(context)
+                  .textTheme
+                  .titleSmall),
+              CustomTextFormField(
+                  hint: AppLocalizations.of(context)!.eventTitle),
               Text(
-                "Description",
+                AppLocalizations.of(context)!.description,
                 style: Theme.of(context).textTheme.titleSmall,
               ),
-              CustomTextFormField(hint: "Event Description....", lines: 5),
+              CustomTextFormField(
+                  hint: AppLocalizations.of(context)!.eventDescription,
+                  lines: 5),
               DateOrTime(
                 dateOrTimeIcon: Icons.date_range_outlined,
-                title: "Event Date",
+                title: AppLocalizations.of(context)!.eventDate,
                 buttonLabel: _formateDate == null
-                    ? "Choose Date"
+                    ? AppLocalizations.of(context)!.chooseDate
                     : _formateDate!,
                 onpressed: onDateClick,
               ),
               DateOrTime(
                 dateOrTimeIcon: Icons.timer_outlined,
-                title: "Event Time",
+                title: AppLocalizations.of(context)!.eventTime,
                 buttonLabel: _formateTime == null
-                    ? "Choose time"
+                    ? AppLocalizations.of(context)!.chooseTime
                     : _formateTime!,
                 onpressed: onTimeClick,
               ),
-              MyElevatedButton(label: "Add event", onpressed: () {}),
+              MyElevatedButton(label: AppLocalizations.of(context)!.addEvent,
+                  onpressed: () {}),
             ],
           ),
         ),

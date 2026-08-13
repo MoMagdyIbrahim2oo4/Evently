@@ -56,7 +56,6 @@ class DefaultFirebaseOptions {
     projectId: 'evently-online-3d853',
     storageBucket: 'evently-online-3d853.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAzC6Hd2egS_m5890AGHqeq4Bk0TNmeNI8',
     appId: '1:547108448724:ios:91b8cd36dba0118c63ce41',

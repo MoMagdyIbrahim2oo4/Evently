@@ -1,6 +1,5 @@
 import 'package:evently/core/constants/app_assets.dart';
 import 'package:evently/core/utils/app_routes.dart';
-import 'package:evently/core/utils/authentication/authentication.dart';
 import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/presentation/widgets/custom_text_button.dart';
 import 'package:evently/presentation/widgets/custom_text_form_field.dart';
@@ -10,8 +9,12 @@ import 'package:evently/presentation/widgets/my_Elevated_button.dart';
 import 'package:evently/presentation/widgets/questions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
+import 'package:provider/provider.dart';
 
 import '../../core/constants/app_colors.dart';
+import '../../core/providers/auth_provider.dart';
+import '../../core/utils/validation/validation.dart';
+import '../widgets/dialog_content.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({super.key});
@@ -23,11 +26,42 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   bool isObscured = true;
 
-  TextEditingController emailController = TextEditingController();
+  TextEditingController emailController = TextEditingController(
+      text: "Mohamed@gmail.com");
 
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController passwordController = TextEditingController(
+      text: "Ha442004");
 
   GlobalKey<FormState> formState = GlobalKey();
+
+  Future<void> login() async {
+    FocusScope.of(context).unfocus();
+    showDialog(
+      context: context,
+      builder: (context) => Dialog(child: DialogContent(),),
+      barrierDismissible: false,
+    );
+    final authProvider = context.read<AuthProvider>();
+    final success = await authProvider.login(
+      email: emailController.text,
+      password: passwordController.text,
+    );
+    if (success) {
+      Navigator.of(context).pop();
+      FocusManager.instance.primaryFocus?.unfocus();
+      Navigator.of(
+        context,
+      ).pushNamedAndRemoveUntil(AppRoutes.mainLayoutScreen, (route) => false);
+    } else {
+      Navigator.of(context).pop();
+      FocusManager.instance.primaryFocus?.unfocus();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(authProvider.errorMessage ?? "something went wrong"),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomTextFormField(
                     controller: emailController,
                     validator: (value) {
-                      return Authentication.emailValidation(context, value);
+                      return Validation.emailValidation(context, value);
                     },
                     prefIcon: Icons.mail,
                     hint: AppLocalizations.of(context)!.enterYourEmail,
@@ -65,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   CustomTextFormField(
                     controller: passwordController,
                     validator: (value) {
-                      return Authentication.passwordValidation(context, value);
+                      return Validation.passwordValidation(context, value);
                     },
                     prefIcon: Icons.lock,
                     hint: AppLocalizations.of(context)!.enterYourPassword,
@@ -94,9 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     label: AppLocalizations.of(context)!.login,
                     onpressed: () {
                       if (formState.currentState!.validate()) {
-                        Navigator.of(
-                          context,
-                        ).pushReplacementNamed(AppRoutes.mainLayoutScreen);
+                        login();
                       }
                     },
                   ),

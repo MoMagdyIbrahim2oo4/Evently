@@ -50,4 +50,9 @@ class AppTextStyle {
     fontSize: 14.sp,
     fontWeight: .w400,
   );
+
+  static final TextStyle semiBold16 = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: .w600,
+  );
 }
