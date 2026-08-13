@@ -1,7 +1,7 @@
 import 'package:evently/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
-class Authentication {
+class Validation {
   static String? emailValidation(BuildContext context,String? email) {
     if (email == null || email.isEmpty) {
       return AppLocalizations.of(context)!.pleaseEnterEmail;

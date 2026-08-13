@@ -1,4 +1,6 @@
 import 'package:evently/core/constants/app_assets.dart';
+import 'package:evently/l10n/app_localizations.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class EventType {
@@ -14,41 +16,41 @@ class EventType {
     required this.imageDarkPath,
   });
 
-  static List<EventType> getCategories() {
+  static List<EventType> getCategories(BuildContext context) {
     return [
       EventType(
         icon: FontAwesomeIcons.compass,
-        type: "All",
+        type: AppLocalizations.of(context)!.all,
         imageLightPath: "",
         imageDarkPath: "",
       ),
       EventType(
         icon: FontAwesomeIcons.bicycle,
-        type: "Sport",
+        type: AppLocalizations.of(context)!.sport,
         imageLightPath: AppAssets.sportLight,
         imageDarkPath: AppAssets.sportDark,
       ),
       EventType(
         icon: FontAwesomeIcons.bookOpen,
-        type: "Book Club",
+        type: AppLocalizations.of(context)!.bookClub,
         imageLightPath: AppAssets.bookClubLight,
         imageDarkPath: AppAssets.bookClubDark,
       ),
       EventType(
         icon: FontAwesomeIcons.cakeCandles,
-        type: "BirthDay",
+        type: AppLocalizations.of(context)!.birthDay,
         imageLightPath: AppAssets.birthDayLight,
         imageDarkPath: AppAssets.birthDayDark,
       ),
       EventType(
         icon: FontAwesomeIcons.meetup,
-        type: "Meeting",
+        type: AppLocalizations.of(context)!.meeting,
         imageLightPath: AppAssets.meetingLight,
         imageDarkPath: AppAssets.meetingDark,
       ),
       EventType(
         icon: FontAwesomeIcons.images,
-        type: "Exhibition",
+        type: AppLocalizations.of(context)!.exhibition,
         imageLightPath: AppAssets.exhibitionLight,
         imageDarkPath: AppAssets.exhibitionDark,
       ),

@@ -41,5 +41,20 @@
   "favorite": "Favorite",
   "profile": "Profile",
   "darkMode": "Dark mode",
-  "logOut": "Logout"
+  "logOut": "Logout",
+  "addEvent": "Add event",
+  "title": "Title",
+  "eventTitle": "Event Title",
+  "description": "Description",
+  "eventDescription": "Event Description....",
+  "eventDate": "Event Date",
+  "chooseDate": "Choose Date",
+  "eventTime": "Event Time",
+  "chooseTime": "Choose time",
+  "all": "All",
+  "sport": "Sport",
+  "bookClub": "Book Club",
+  "birthDay": "BirthDay",
+  "meeting": "Meeting",
+  "exhibition": "Exhibition"
 }

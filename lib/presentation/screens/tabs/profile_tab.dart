@@ -2,6 +2,8 @@ import 'package:evently/core/constants/app_assets.dart';
 import 'package:evently/core/constants/app_colors.dart';
 import 'package:evently/core/providers/app_localization_provider.dart';
 import 'package:evently/core/providers/app_theme_provider.dart';
+import 'package:evently/core/providers/auth_provider.dart';
+import 'package:evently/core/utils/app_routes.dart';
 import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/presentation/widgets/setting_tile.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,7 @@ class ProfileTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var themeProvider = Provider.of<ThemeProvider>(context);
+    var authProvider = Provider.of<AuthProvider>(context);
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.all(16.r),
@@ -25,16 +28,13 @@ class ProfileTab extends StatelessWidget {
                 radius: 58.r,
                 backgroundImage: AssetImage(AppAssets.routeProfile),
               ),
-              Text("Route Academy", style: Theme
-                  .of(context)
-                  .textTheme
-                  .bodyLarge),
               Text(
-                "Route@gmail.com",
-                style: Theme
-                    .of(context)
-                    .textTheme
-                    .bodySmall,
+                authProvider.currentUser?.userName ?? '',
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+              Text(
+                authProvider.currentUser?.email ?? '',
+                style: Theme.of(context).textTheme.bodySmall,
               ),
               SettingTile(
                 label: AppLocalizations.of(context)!.darkMode,
@@ -44,7 +44,8 @@ class ProfileTab extends StatelessWidget {
                   activeThumbColor: AppColors.white,
                   inactiveThumbColor: AppColors.white,
                   trackOutlineColor: WidgetStateProperty.all(
-                      Colors.transparent),
+                    Colors.transparent,
+                  ),
                   value: themeProvider.isDark,
                   onChanged: (value) {
                     if (value) {
@@ -63,16 +64,22 @@ class ProfileTab extends StatelessWidget {
                   label: AppLocalizations.of(context)!.language,
                   item: Icon(
                     Icons.arrow_forward_ios_sharp,
-                    color: Theme
-                        .of(context)
-                        .colorScheme
-                        .primary,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
               ),
-              SettingTile(
-                label: AppLocalizations.of(context)!.logOut,
-                item: Icon(Icons.logout, color: Colors.red),
+              InkWell(
+                onTap: () {
+                  authProvider.logout();
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    AppRoutes.loginScreen,
+                    (routes) => false,
+                  );
+                },
+                child: SettingTile(
+                  label: AppLocalizations.of(context)!.logOut,
+                  item: Icon(Icons.logout, color: Colors.red),
+                ),
               ),
             ],
           ),
@@ -91,9 +98,7 @@ class Sheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isEnglish = Localizations
-        .localeOf(context)
-        .languageCode == 'en';
+    bool isEnglish = Localizations.localeOf(context).languageCode == 'en';
     var languageProvider = Provider.of<AppLocalizationProvider>(context);
     return Padding(
       padding: EdgeInsets.all(16.r),
@@ -103,10 +108,7 @@ class Sheet extends StatelessWidget {
         children: [
           Text(
             AppLocalizations.of(context)!.language,
-            style: Theme
-                .of(context)
-                .textTheme
-                .headlineMedium,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
           InkWell(
             onTap: () {
@@ -116,10 +118,7 @@ class Sheet extends StatelessWidget {
             child: ListTile(
               leading: Text(
                 AppLocalizations.of(context)!.english,
-                style: Theme
-                    .of(context)
-                    .textTheme
-                    .bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               trailing: isEnglish ? Icon(Icons.check) : null,
             ),
@@ -132,10 +131,7 @@ class Sheet extends StatelessWidget {
             child: ListTile(
               leading: Text(
                 AppLocalizations.of(context)!.arabic,
-                style: Theme
-                    .of(context)
-                    .textTheme
-                    .bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               trailing: isEnglish ? null : Icon(Icons.check),
             ),

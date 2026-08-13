@@ -41,5 +41,20 @@
   "favorite": "المفضلة",
   "profile": "حسابي",
   "darkMode": "الوضع الداكن",
-  "logOut": "تسجيل الخروج"
+  "logOut": "تسجيل الخروج",
+  "addEvent": "إضافة حدث",
+  "title": "عنوان",
+  "eventTitle": "عنوان الحدث",
+  "description": "وصف",
+  "eventDescription": "وصف الحدث....",
+  "eventDate": "تاريخ الفعالية",
+  "chooseDate": "اختر التاريخ",
+  "eventTime": "الوقت",
+  "chooseTime": "اختر الوقت",
+  "all": "الجميع",
+  "sport": "رياضة",
+  "bookClub": "نادي الكتاب",
+  "birthDay": "عيد ميلاد",
+  "meeting": "مقابلة",
+  "exhibition": "معرض"
 }
