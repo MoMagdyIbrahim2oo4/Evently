@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.of(context).pop();
       FocusManager.instance.primaryFocus?.unfocus();
       ToastUtils.showToast(
-        msg: "Logged in successfully",
+        msg: AppLocalizations.of(context)!.loggedInSuccessfully,
         gravity: ToastGravity.TOP,
         backColor: Colors.green,
         textColor: Colors.white,

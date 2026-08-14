@@ -445,6 +445,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Exhibition'**
   String get exhibition;
+
+  /// No description provided for @welcomeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome Back ✨'**
+  String get welcomeBack;
+
+  /// No description provided for @loggedInSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Logged in successfully'**
+  String get loggedInSuccessfully;
+
+  /// No description provided for @enterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter title'**
+  String get enterTitle;
+
+  /// No description provided for @enterDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter description'**
+  String get enterDescription;
+
+  /// No description provided for @eventAddedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Event added successfully'**
+  String get eventAddedSuccessfully;
 }
 
 class _AppLocalizationsDelegate

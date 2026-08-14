@@ -1,4 +1,6 @@
 import 'package:evently/core/providers/app_theme_provider.dart';
+import 'package:evently/core/providers/auth_provider.dart';
+import 'package:evently/core/utils/firebase_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 import 'package:intl/intl.dart';
@@ -76,7 +78,11 @@ class _EventCardState extends State<EventCard> {
                 IconButton(
                   onPressed: () {
                     setState(() {
-                      isFavourite = !isFavourite;
+                      // isFavourite = !isFavourite;
+                      FirebaseUtils.updateFavourite(
+                        context.read<AuthProvider>().currentUser!.id,
+                        widget.event,
+                      );
                     });
                   },
                   icon: Icon(

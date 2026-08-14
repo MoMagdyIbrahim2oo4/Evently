@@ -56,5 +56,10 @@
   "bookClub": "Book Club",
   "birthDay": "BirthDay",
   "meeting": "Meeting",
-  "exhibition": "Exhibition"
+  "exhibition": "Exhibition",
+  "welcomeBack": "Welcome Back ✨",
+  "loggedInSuccessfully": "Logged in successfully",
+  "enterTitle": "Enter title",
+  "enterDescription": "Enter description",
+  "eventAddedSuccessfully": "Event added successfully"
 }

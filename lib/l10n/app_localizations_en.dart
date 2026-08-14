@@ -185,4 +185,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get exhibition => 'Exhibition';
+
+  @override
+  String get welcomeBack => 'Welcome Back ✨';
+
+  @override
+  String get loggedInSuccessfully => 'Logged in successfully';
+
+  @override
+  String get enterTitle => 'Enter title';
+
+  @override
+  String get enterDescription => 'Enter description';
+
+  @override
+  String get eventAddedSuccessfully => 'Event added successfully';
 }
