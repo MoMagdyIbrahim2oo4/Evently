@@ -1,11 +1,15 @@
-import 'package:evently/core/constants/app_assets.dart';
 import 'package:evently/core/providers/app_theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
+import '../../data/model/event.dart';
+
 class EventCard extends StatefulWidget {
-  EventCard({super.key});
+  Event event;
+
+  EventCard({super.key, required this.event});
 
   @override
   State<EventCard> createState() => _EventCardState();
@@ -25,8 +29,8 @@ class _EventCardState extends State<EventCard> {
         image: DecorationImage(
           image: AssetImage(
             themeProvider.isDark
-                ? AppAssets.birthDayDark
-                : AppAssets.birthDayLight,
+                ? widget.event.imagePathDark
+                : widget.event.imagePathLight,
           ),
           fit: BoxFit.fill,
         ),
@@ -47,12 +51,12 @@ class _EventCardState extends State<EventCard> {
               ),
             ),
             child: Text(
-              "21 Jan",
+              DateFormat('dd MMM').format(widget.event.eventDate),
               style: Theme.of(context).textTheme.displayLarge,
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.secondary,
               borderRadius: BorderRadiusGeometry.circular(8.r),
@@ -63,9 +67,11 @@ class _EventCardState extends State<EventCard> {
             child: Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text(
-                  "This is a Birthday Party ",
-                  style: Theme.of(context).textTheme.labelSmall,
+                Expanded(
+                  child: Text(
+                    widget.event.title,
+                    style: Theme.of(context).textTheme.labelSmall,
+                  ),
                 ),
                 IconButton(
                   onPressed: () {
@@ -74,7 +80,7 @@ class _EventCardState extends State<EventCard> {
                     });
                   },
                   icon: Icon(
-                    isFavourite
+                    widget.event.isFavourite
                         ? Icons.favorite_outlined
                         : Icons.favorite_outline_outlined,
                     color: Theme.of(context).colorScheme.primary,

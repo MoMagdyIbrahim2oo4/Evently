@@ -3,6 +3,8 @@ import 'package:evently/presentation/screens/tabs/favourite_tab.dart';
 import 'package:evently/presentation/screens/tabs/home_tab.dart';
 import 'package:evently/presentation/screens/tabs/profile_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import '../../core/utils/toast_utils.dart';
 import '../view/custom_bottombar.dart';
 
 class MainLayoutScreen extends StatefulWidget {
@@ -37,3 +39,20 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
     );
   }
 }
+
+//
+// {
+// final result = await Navigator.of(context).pushNamed(
+// AppRoutes.addEventScreen,
+// );
+//
+// if (result == true) {
+// print("EVENT ADDED SUCCESSFULLY");
+// ToastUtils.showToast(
+// msg: "Event added successfully",
+// gravity: ToastGravity.CENTER,
+// backColor: Colors.green,
+// textColor: Colors.white,
+// );
+// }
+// }

@@ -19,14 +19,14 @@ class FavouriteTab extends StatelessWidget {
               hint: "Search for event",
               suffixIcon: Icons.search_outlined,
             ),
-            Expanded(
-              child: ListView.separated(
-                  itemBuilder: (context, index) => EventCard(),
-                  separatorBuilder: (context, index) =>
-                      SizedBox(height: 16.h,),
-                  itemCount: 10
-              ),
-            )
+            // Expanded(
+            //   child: ListView.separated(
+            //       itemBuilder: (context, index) => EventCard(),
+            //       separatorBuilder: (context, index) =>
+            //           SizedBox(height: 16.h,),
+            //       itemCount: 10
+            //   ),
+            // )
           ],
         ),
       ),

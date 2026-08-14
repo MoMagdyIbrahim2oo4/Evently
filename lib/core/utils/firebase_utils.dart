@@ -2,7 +2,28 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:evently/data/model/app_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../../data/model/event.dart';
+
 class FirebaseUtils {
+  static CollectionReference<AppUser> userCollection() {
+    return FirebaseFirestore.instance
+        .collection(AppUser.collectionName)
+        .withConverter<AppUser>(
+          fromFirestore: (snapshot, _) => AppUser.fromJson(snapshot.data()!),
+          toFirestore: (user, _) => user.toJson(),
+        );
+  }
+
+  static CollectionReference<Event> eventCollection(String uid) {
+    return userCollection()
+        .doc(uid)
+        .collection(Event.collectionName)
+        .withConverter<Event>(
+          fromFirestore: (snapshot, _) => Event.fromJson(snapshot.data()!),
+          toFirestore: (event, _) => event.toJson(),
+        );
+  }
+
   static Future<AppUser> register({
     required String email,
     required String password,
@@ -30,15 +51,6 @@ class FirebaseUtils {
   }
 
   static Future<void> logout() async => await FirebaseAuth.instance.signOut();
-
-  static CollectionReference<AppUser> userCollection() {
-    return FirebaseFirestore.instance
-        .collection(AppUser.collectionName)
-        .withConverter<AppUser>(
-          fromFirestore: (snapshot, _) => AppUser.fromJson(snapshot.data()!),
-          toFirestore: (user, _) => user.toJson(),
-        );
-  }
 
   static String authErrorMessage(FirebaseAuthException e) {
     switch (e.code) {
@@ -73,5 +85,34 @@ class FirebaseUtils {
       default:
         return e.message ?? 'Something went wrong. Please try again.';
     }
+  }
+
+  static Future<void> addEvent(Event event, String uid) async {
+    DocumentReference<Event> docRef = eventCollection(uid).doc();
+    event.id = docRef.id;
+    docRef.set(event);
+  }
+
+  static Stream<List<Event>> getEvents(String uid) {
+    Stream<QuerySnapshot<Event>> eventStream = eventCollection(
+      uid,
+    ).orderBy("Event_Date").snapshots();
+    return eventStream.map((querySnapShot) {
+      return querySnapShot.docs.map((doc) {
+        return doc.data();
+      }).toList();
+    });
+  }
+
+  static Stream<List<Event>> getFilteredEvents(String uid, int currentIndex) {
+    Stream<QuerySnapshot<Event>> eventStream = eventCollection(uid)
+        .where("Event_Index", isEqualTo: currentIndex)
+        .orderBy("Event_Date")
+        .snapshots();
+    return eventStream.map((querySnapShot) {
+      return querySnapShot.docs.map((doc) {
+        return doc.data();
+      }).toList();
+    });
   }
 }

@@ -8,8 +8,9 @@ import 'package:provider/provider.dart';
 
 class HomeHeader extends StatefulWidget {
   List<EventType> categories;
+  void Function(int) onTapPressed;
 
-  HomeHeader({super.key, required this.categories});
+  HomeHeader({super.key, required this.categories, required this.onTapPressed});
 
   @override
   State<HomeHeader> createState() => _HomeHeaderState();
@@ -70,16 +71,21 @@ class _HomeHeaderState extends State<HomeHeader> {
           labelPadding: EdgeInsets.only(right: 10.w, left: 10.w),
           padding: EdgeInsets.zero,
           indicatorColor: Colors.transparent,
-            onTap: (index) {
-              setState(() {
-                currentIndex = index;
-              });
-            },
-            tabs: widget.categories
-                .map((category) =>
-                EventTypeItem(category: category,
-                    isSelected: currentIndex ==
-                        widget.categories.indexOf(category))).toList()
+          onTap: (index) {
+            setState(() {
+              currentIndex = index;
+            });
+            widget.onTapPressed(index);
+          },
+          tabs: widget.categories
+              .map(
+                (category) => EventTypeItem(
+                  category: category,
+                  isSelected:
+                      currentIndex == widget.categories.indexOf(category),
+                ),
+              )
+              .toList(),
         ),
       ],
     );
