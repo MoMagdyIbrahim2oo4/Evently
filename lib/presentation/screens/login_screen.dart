@@ -9,10 +9,12 @@ import 'package:evently/presentation/widgets/my_Elevated_button.dart';
 import 'package:evently/presentation/widgets/questions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/constants/app_colors.dart';
 import '../../core/providers/auth_provider.dart';
+import '../../core/utils/toast_utils.dart';
 import '../../core/utils/validation/validation.dart';
 import '../widgets/dialog_content.dart';
 
@@ -49,6 +51,12 @@ class _LoginScreenState extends State<LoginScreen> {
     if (success) {
       Navigator.of(context).pop();
       FocusManager.instance.primaryFocus?.unfocus();
+      ToastUtils.showToast(
+        msg: "Logged in successfully",
+        gravity: ToastGravity.TOP,
+        backColor: Colors.green,
+        textColor: Colors.white,
+      );
       Navigator.of(
         context,
       ).pushNamedAndRemoveUntil(AppRoutes.mainLayoutScreen, (route) => false);
