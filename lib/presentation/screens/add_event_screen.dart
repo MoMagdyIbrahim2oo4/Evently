@@ -195,8 +195,8 @@ class _AddEventScreenState extends State<AddEventScreen> {
                         ToastUtils.showToast(
                               msg: AppLocalizations.of(
                                 context,
-                              )!.eventAddedSuccessfullygravity: ToastGravity.CENTER,
-                          backColor: Colors.green,
+                              )!.eventAddedSuccessfully,
+                              gravity: ToastGravity.CENTERbackColor: Colors.green,
                           textColor: Colors.white,
                         );
                         Navigator.of(context).pop(true);
