@@ -122,7 +122,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
                     if (value == null || value
                         .trim()
                         .isEmpty) {
-                      return 'Enter title';
+                      return AppLocalizations.of(context)!.enterTitle;
                     } else {
                       return null;
                     }
@@ -143,7 +143,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
                     if (value == null || value
                         .trim()
                         .isEmpty) {
-                      return 'Enter description';
+                      return AppLocalizations.of(context)!.enterDescription;
                     } else {
                       return null;
                     }
@@ -193,8 +193,9 @@ class _AddEventScreenState extends State<AddEventScreen> {
                             .id,
                       ).then((value) {
                         ToastUtils.showToast(
-                          msg: "Event added successfully",
-                          gravity: ToastGravity.CENTER,
+                              msg: AppLocalizations.of(
+                                context,
+                              )!.eventAddedSuccessfullygravity: ToastGravity.CENTER,
                           backColor: Colors.green,
                           textColor: Colors.white,
                         );

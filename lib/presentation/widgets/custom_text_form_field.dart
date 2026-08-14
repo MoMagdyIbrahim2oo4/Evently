@@ -13,6 +13,7 @@ class CustomTextFormField extends StatelessWidget {
   String hint;
   IconData? suffixIcon;
   Function()? suffixPressed;
+  void Function(String)? onchanged;
 
   CustomTextFormField({
     super.key,
@@ -24,13 +25,15 @@ class CustomTextFormField extends StatelessWidget {
     this.prefIcon,
     required this.hint,
     this.suffixIcon,
-    this.suffixPressed
+    this.suffixPressed,
+    this.onchanged
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      onChanged: onchanged,
       validator: validator,
       maxLines: lines,
       obscureText: isObscured == null ? false : isObscured!,

@@ -115,4 +115,22 @@ class FirebaseUtils {
       }).toList();
     });
   }
+
+  static Future<void> updateFavourite(String userUid, Event event) async {
+    eventCollection(
+      userUid,
+    ).doc(event.id).update({"Is_Favourite": !event.isFavourite});
+  }
+
+  static Stream<List<Event>> getFavouriteEvents(String uid) {
+    Stream<QuerySnapshot<Event>> favouriteStream = eventCollection(uid)
+        .where("Is_Favourite", isEqualTo: true)
+        .orderBy("Event_Date")
+        .snapshots();
+    return favouriteStream.map((qureySnapShot) {
+      return qureySnapShot.docs.map((doc) {
+        return doc.data();
+      }).toList();
+    });
+  }
 }

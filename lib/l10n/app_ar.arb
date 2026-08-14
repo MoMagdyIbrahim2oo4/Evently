@@ -56,5 +56,10 @@
   "bookClub": "نادي الكتاب",
   "birthDay": "عيد ميلاد",
   "meeting": "مقابلة",
-  "exhibition": "معرض"
+  "exhibition": "معرض",
+  "welcomeBack": "أهلاً بعودتك ✨",
+  "loggedInSuccessfully": "تم تسجيل الدخول بنجاح",
+  "enterTitle": "أدخل العنوان",
+  "enterDescription": "أدخل الوصف",
+  "eventAddedSuccessfully": "تمت إضافة الحساب بنجاح"
 }

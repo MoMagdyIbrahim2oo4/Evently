@@ -1,6 +1,6 @@
 import 'package:evently/core/providers/auth_provider.dart';
 import 'package:evently/data/model/event_type.dart';
-import 'package:evently/presentation/widgets/category_tab.dart';
+import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/presentation/widgets/event_type_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
@@ -29,7 +29,7 @@ class _HomeHeaderState extends State<HomeHeader> {
             Column(
               children: [
                 Text(
-                  "Welcome Back ✨",
+                  AppLocalizations.of(context)!.welcomeBack,
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 Text(

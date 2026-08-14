@@ -185,4 +185,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get exhibition => 'معرض';
+
+  @override
+  String get welcomeBack => 'أهلاً بعودتك ✨';
+
+  @override
+  String get loggedInSuccessfully => 'تم تسجيل الدخول بنجاح';
+
+  @override
+  String get enterTitle => 'أدخل العنوان';
+
+  @override
+  String get enterDescription => 'أدخل الوصف';
+
+  @override
+  String get eventAddedSuccessfully => 'تمت إضافة الحساب بنجاح';
 }
