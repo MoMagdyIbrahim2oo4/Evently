@@ -4,6 +4,7 @@ import 'package:evently/core/utils/app_routes.dart';
 import 'package:evently/core/utils/app_theme.dart';
 import 'package:evently/l10n/app_localizations.dart';
 import 'package:evently/presentation/screens/add_event_screen.dart';
+import 'package:evently/presentation/screens/datails_screen.dart';
 import 'package:evently/presentation/screens/login_screen.dart';
 import 'package:evently/presentation/screens/main_layout_screen.dart';
 import 'package:evently/presentation/screens/onboarding_screen.dart';
@@ -73,6 +74,7 @@ class MyApp extends StatelessWidget {
             AppRoutes.registerScreen:(context)=>RegisterScreen(),
             AppRoutes.mainLayoutScreen: (context) => MainLayoutScreen(),
             AppRoutes.addEventScreen: (context) => AddEventScreen(),
+            AppRoutes.detailsScreen: (context) => DetailsScreen(),
           },
             home: _Gate(isOnboardingSeen: isOnboardingSeen),
             // initialRoute: isOnboardingSeen ?

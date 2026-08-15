@@ -52,7 +52,9 @@ class AppTheme {
         color: AppColors.darkGray,
       ),
         displayLarge: AppTextStyle.semiBold16.copyWith(
-            color: AppColors.darkBlue)
+            color: AppColors.darkBlue),
+      displayMedium: AppTextStyle.semiBold16.copyWith(
+          color: AppColors.darkGray)
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -161,7 +163,9 @@ class AppTheme {
         color: AppColors.white,
       ),
         displayLarge: AppTextStyle.semiBold16.copyWith(
-            color: AppColors.lightBlue)
+            color: AppColors.lightBlue),
+      displayMedium: AppTextStyle.semiBold16.copyWith(
+          color: AppColors.lightBlue)
     ),
 
     elevatedButtonTheme: ElevatedButtonThemeData(

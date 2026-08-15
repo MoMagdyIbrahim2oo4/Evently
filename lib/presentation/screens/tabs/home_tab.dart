@@ -1,4 +1,5 @@
 import 'package:evently/core/providers/auth_provider.dart';
+import 'package:evently/core/utils/app_routes.dart';
 import 'package:evently/core/utils/firebase_utils.dart';
 import 'package:evently/data/model/event_type.dart';
 import 'package:evently/presentation/view/event_card.dart';
@@ -30,16 +31,14 @@ class _HomeTabState extends State<HomeTab> {
 
   Stream<List<Event>> updateEvent(int index) {
     if (index == 0) {
-      return FirebaseUtils.getEvents(context
-          .read<AuthProvider>()
-          .currentUser!
-          .id,);
-    }
-    else {
-      return FirebaseUtils.getFilteredEvents(context
-          .read<AuthProvider>()
-          .currentUser!
-          .id, index);
+      return FirebaseUtils.getEvents(
+        context.read<AuthProvider>().currentUser!.id,
+      );
+    } else {
+      return FirebaseUtils.getFilteredEvents(
+        context.read<AuthProvider>().currentUser!.id,
+        index,
+      );
     }
   }
 
@@ -77,8 +76,15 @@ class _HomeTabState extends State<HomeTab> {
                     } else {
                       eventList = snapshot.data!;
                       return ListView.separated(
-                        itemBuilder: (context, index) =>
-                            EventCard(event: eventList[index]),
+                        itemBuilder: (context, index) => InkWell(
+                          onTap: () {
+                            Navigator.of(context).pushNamed(
+                              AppRoutes.detailsScreen,
+                              arguments: eventList[index],
+                            );
+                          },
+                          child: EventCard(event: eventList[index]),
+                        ),
                         separatorBuilder: (context, index) =>
                             SizedBox(height: 16.h),
                         itemCount: eventList.length,
