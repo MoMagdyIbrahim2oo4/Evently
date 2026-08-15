@@ -1,5 +1,6 @@
 import 'package:evently/core/constants/app_icons.dart';
 import 'package:evently/core/providers/app_theme_provider.dart';
+import 'package:evently/core/utils/app_routes.dart';
 import 'package:evently/core/utils/firebase_utils.dart';
 import 'package:evently/core/utils/toast_utils.dart';
 import 'package:evently/data/model/event.dart';
@@ -36,7 +37,9 @@ class DetailsScreen extends StatelessWidget {
         ),
         actions: [
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.editScreen,arguments: event);
+            },
             style: OutlinedButton.styleFrom(
               padding: EdgeInsets.all(4.r),
               minimumSize: Size(30.w, 30.h),
@@ -62,10 +65,10 @@ class DetailsScreen extends StatelessWidget {
                 event,
               );
               ToastUtils.showToast(
-                  msg: "Event deleted successfully",
-                  gravity: ToastGravity.CENTER,
-                  backColor: Colors.green,
-                  textColor: Colors.white
+                msg: "Event deleted successfully",
+                gravity: ToastGravity.CENTER,
+                backColor: Colors.green,
+                textColor: Colors.white,
               );
               Navigator.of(context).pop();
             },
