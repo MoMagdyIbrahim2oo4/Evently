@@ -136,4 +136,19 @@ class FirebaseUtils {
   static Future<void> deleteEvent(String userUid, Event event) async {
     eventCollection(userUid).doc(event.id).delete();
   }
+
+  static Future<void> updateEvent({required String userUid, required Event event, required Event updated}) async {
+    eventCollection(
+      userUid,
+    ).doc(event.id).update({
+      "Event_Name":updated.eventName,
+      "Image_Path_Light":updated.imagePathLight,
+      "Image_PAth_Dark":updated.imagePathDark,
+      "Event_Index":updated.eventIndex,
+      "Title":updated.title,
+      "Description":updated.description,
+      "Event_Date":updated.eventDate
+    }
+    );
+  }
 }

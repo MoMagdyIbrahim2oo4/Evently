@@ -6,4 +6,5 @@ class AppRoutes {
   static const String mainLayoutScreen = 'Main Layout';
   static const String addEventScreen = 'add event';
   static const String detailsScreen = 'Details Screen';
+  static const String editScreen = 'Edit Screen';
 }
