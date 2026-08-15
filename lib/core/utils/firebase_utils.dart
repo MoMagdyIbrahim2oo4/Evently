@@ -123,14 +123,17 @@ class FirebaseUtils {
   }
 
   static Stream<List<Event>> getFavouriteEvents(String uid) {
-    Stream<QuerySnapshot<Event>> favouriteStream = eventCollection(uid)
-        .where("Is_Favourite", isEqualTo: true)
-        .orderBy("Event_Date")
-        .snapshots();
-    return favouriteStream.map((qureySnapShot) {
-      return qureySnapShot.docs.map((doc) {
+    Stream<QuerySnapshot<Event>> favouriteStream = eventCollection(
+      uid,
+    ).where("Is_Favourite", isEqualTo: true).orderBy("Event_Date").snapshots();
+    return favouriteStream.map((querySnapShot) {
+      return querySnapShot.docs.map((doc) {
         return doc.data();
       }).toList();
     });
+  }
+
+  static Future<void> deleteEvent(String userUid, Event event) async {
+    eventCollection(userUid).doc(event.id).delete();
   }
 }

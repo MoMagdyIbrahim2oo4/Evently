@@ -10,10 +10,11 @@ class CustomTextFormField extends StatelessWidget {
   bool? isObscured;
   String? obsecureChar;
   IconData? prefIcon;
-  String hint;
+  String? hint;
   IconData? suffixIcon;
   Function()? suffixPressed;
   void Function(String)? onchanged;
+  bool? enable;
 
   CustomTextFormField({
     super.key,
@@ -23,15 +24,18 @@ class CustomTextFormField extends StatelessWidget {
     this.isObscured,
     this.obsecureChar,
     this.prefIcon,
-    required this.hint,
+    this.hint,
     this.suffixIcon,
     this.suffixPressed,
-    this.onchanged
+    this.onchanged,
+    this.enable
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      enabled: enable,
+      style: Theme.of(context).textTheme.labelSmall,
       controller: controller,
       onChanged: onchanged,
       validator: validator,
@@ -39,15 +43,13 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: isObscured == null ? false : isObscured!,
       obscuringCharacter: "*",
       decoration: InputDecoration(
-          prefixIcon: prefIcon == null ? null : Icon(prefIcon),
-          prefixIconColor: AppColors.comfortGray,
-          hintText: hint,
-          hintStyle: Theme
-              .of(context)
-              .textTheme
-              .labelSmall,
-          suffixIcon: suffixIcon == null ? null : IconButton(
-              onPressed: suffixPressed, icon: Icon(suffixIcon))
+        prefixIcon: prefIcon == null ? null : Icon(prefIcon),
+        prefixIconColor: AppColors.comfortGray,
+        hintText: hint,
+        hintStyle: Theme.of(context).textTheme.labelSmall,
+        suffixIcon: suffixIcon == null
+            ? null
+            : IconButton(onPressed: suffixPressed, icon: Icon(suffixIcon)),
       ),
     );
   }

@@ -7,4 +7,7 @@ class AppIcons {
   static String favouriteSelected = "${_initialPath}favourite_selected.svg";
   static String profileUnselected = "${_initialPath}profile_unselected.svg";
   static String profileSelected = "${_initialPath}profile_selected.svg";
+  static String trash = "${_initialPath}trash.svg";
+  static String edit = "${_initialPath}edit.svg";
+  static String calender = "${_initialPath}calendar-add.svg";
 }
